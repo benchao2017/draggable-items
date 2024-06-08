@@ -41,6 +41,7 @@ export function SortableItem({ id, name, cover, location }: API.TouristSpot) {
 
   return (
     <li
+      key={`${id}-item-${name}`}
       ref={setNodeRef}
       style={style}
       {...attributes}
