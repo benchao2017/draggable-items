@@ -48,26 +48,28 @@ export function SortableItem({ id, name, cover, location }: API.TouristSpot) {
       {...listeners}
       onMouseOver={onHoverItem}
       onMouseLeave={onLeaseItem}
-      className="flex items-center justify-between px-8 py-5 gap-x-6 hover:bg-[#F4F5F6] hover:cursor-pointer"
+      className='flex items-center justify-between px-8 py-5 gap-x-6 hover:bg-[#F4F5F6] hover:cursor-pointer'
     >
-      <div className="flex items-center justify-center min-w-0 gap-x-4">
+      <div className='flex items-center justify-center min-w-0 gap-x-4'>
         <Image
+          priority={true}
           src={cover}
           width={96}
           height={96}
           alt={name}
-          className="rounded-xl"
+          className='rounded-xl'
         />
-        <div className="min-w-0 flex-auto">
-          <p className="text-base font-semibold leading-6 text-[#292B36]">
+        <div className='min-w-0 flex-auto'>
+          <p className='text-base font-semibold leading-6 text-[#292B36]'>
             {name}
           </p>
-          <p className="truncate text-sm leading-[22px] text-[#A8A9AE] flex items-center justify-start">
+          <p className='truncate text-sm leading-[22px] text-[#A8A9AE] flex items-center justify-start'>
             <Image
+              priority={true}
               src={"/images/location.png"}
               width={16}
               height={22}
-              alt="location icon"
+              alt='location icon'
             />{" "}
             <span>{location}</span>
           </p>

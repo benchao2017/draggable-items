@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, Fragment } from "react";
 import {
   DndContext,
   closestCenter,
@@ -128,10 +128,10 @@ export function DraggableList() {
         >
           <SortableContext items={items} strategy={verticalListSortingStrategy}>
             {items.map((ts: API.TouristSpot, index: number) => (
-              <>
+              <Fragment key={`${ts.id}-fragment`}>
                 {targetIndex === index && <div style={indicatorStyle} />}
                 <SortableItem key={`${ts.id}-${ts.name}`} {...ts} />
-              </>
+              </Fragment>
             ))}
           </SortableContext>
           {/* <DragOverlay>
